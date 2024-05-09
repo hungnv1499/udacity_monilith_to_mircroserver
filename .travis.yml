@@ -21,20 +21,20 @@ script:
   - docker --version # print the version for logging
   # Build and tag feed-api
   - docker build -t udagram-api-feed ./udagram-api-feed
-  - docker tag udagram-api-feed hungnv102/udagram-api-feed:v2
+  - docker tag udagram-api-feed hungnv102/udagram-api-feed:v4
   # Build and tag feed-api
   - docker build -t udagram-api-user ./udagram-api-user
-  - docker tag udagram-api-user hungnv102/udagram-api-user:v1
+  - docker tag udagram-api-user hungnv102/udagram-api-user:v4
   # Build and tag feed-api
   - docker build -t udagram-frontend ./udagram-frontend
-  - docker tag udagram-frontend hungnv102/udagram-frontend:v2
+  - docker tag udagram-frontend hungnv102/udagram-frontend:v4
   # Build and tag feed-api
   - docker build -t udagram-reverseproxy ./udagram-reverseproxy
-  - docker tag udagram-reverseproxy hungnv102/udagram-reverseproxy:v1
+  - docker tag udagram-reverseproxy hungnv102/udagram-reverseproxy:v4
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push hungnv102/udagram-api-feed:v3
-  - docker push hungnv102/udagram-api-user:v3
-  - docker push hungnv102/udagram-frontend:v3
-  - docker push hungnv102/udagram-reverseproxy:v3
+  - docker push hungnv102/udagram-api-feed:v4
+  - docker push hungnv102/udagram-api-user:v4
+  - docker push hungnv102/udagram-frontend:v4
+  - docker push hungnv102/udagram-reverseproxy:v4
