@@ -15,7 +15,7 @@ spec:
         service: api-feed
     spec:
       containers:
-      - image: hungnv102/udagram-api-feed:v2
+      - image: hungnv102/udagram-api-feed:v4
         name: api-feed
         imagePullPolicy: Always  
         resources:
